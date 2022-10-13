@@ -10,5 +10,6 @@ services:
     stdin_open: true
     tty: true
     volumes:
+      - /var/log:/var/log:ro
       - /var/run/docker.sock:/tmp/docker.sock
       - ./logrotate:/etc/logrotate.d

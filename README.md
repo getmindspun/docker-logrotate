@@ -11,7 +11,7 @@ Runs logrotate then sends a signal to the parent container.
 * Run the following to run the docker container.
 
 ```bash
-    docker run -d -v $(pwd)/logrotate/:/etc/logrotate.d/ -v /var/run/docker.sock:/tmp/docker.sock mindspun/logrotate
+    docker run -d -v /var/log:/var/log:ro -v $(pwd)/logrotate/:/etc/logrotate.d/ -v /var/run/docker.sock:/tmp/docker.sock mindspun/logrotate
 ```
 
 ## Example
