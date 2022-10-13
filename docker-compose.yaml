@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  logrotate:
+    container_name: logrotate
+    build:
+      context: .
+    image: mindspun/logrotate:latest
+    restart: always
+    stdin_open: true
+    tty: true
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
+      - ./logrotate:/etc/logrotate.d
